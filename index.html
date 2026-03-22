@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebGrow — Website Subscription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f5f7fb;
+      --primary: #4f46e5;
+      --primary-hover: #3730a3;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600
+    }
+
+    nav a:hover {
+      color: var(--primary)
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-hover)
+    }
+
+    section {
+      padding: 80px 5%;
+      max-width: 1100px;
+      margin: auto
+    }
+
+    .alt {
+      background: var(--bg-alt)
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px
+    }
+
+    p {
+      color: var(--muted)
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: var(--radius);
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: var(--radius);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .icon {
+      font-size: 22px;
+      margin-bottom: 10px
+    }
+
+    .cta {
+      text-align: center
+    }
+
+    /* animations */
+    .hidden {
+      opacity: 0
+    }
+
+    .slide-left {
+      transform: translateX(-60px);
+      opacity: 0
+    }
+
+    .slide-right {
+      transform: translateX(60px);
+      opacity: 0
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateX(0);
+      transition: .6s ease
+    }
+
+    .fade-up {
+      transform: translateY(30px);
+      opacity: 0
+    }
+
+    .fade-show {
+      transform: translateY(0);
+      opacity: 1;
+      transition: .6s ease
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      h1 {
+        font-size: 30px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <strong>WebGrow</strong>
+    <nav>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Get More Clients With a Website That Actually Works</h1>
+      <p>We build, manage, and grow your website — so you can focus on your business.</p>
+      <br>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Website work">
+  </section>
+
+  <section class="alt">
+    <h2>Problems Business Owners Face</h2>
+    <div class="grid grid-3">
+      <div class="card slide-left">
+        <div class="icon">🚫</div>No website at all
+      </div>
+      <div class="card slide-right">
+        <div class="icon">📉</div>No clients from Google
+      </div>
+      <div class="card slide-left">
+        <div class="icon">📱</div>Not mobile friendly
+      </div>
+      <div class="card slide-right">
+        <div class="icon">🎨</div>Outdated design
+      </div>
+      <div class="card slide-left">
+        <div class="icon">⏳</div>No time to manage
+      </div>
+      <div class="card slide-right">
+        <div class="icon">⚙️</div>Too technical
+      </div>
+      <div class="card slide-left">
+        <div class="icon">💸</div>Expensive freelancers
+      </div>
+      <div class="card slide-right">
+        <div class="icon">📊</div>No results tracking
+      </div>
+    </div>
+    <br>
+    <div class="cta">
+      <a href="#contact" class="btn">Fix My Website</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why This Works</h2>
+    <div class="grid grid-3">
+      <div class="card fade-up">
+        <h3>More Clients</h3>
+        <p>Optimized websites that actually convert visitors into paying customers.</p>
+      </div>
+      <div class="card fade-up">
+        <h3>Save Time</h3>
+        <p>No need to deal with tech — we handle everything for you.</p>
+      </div>
+      <div class="card fade-up">
+        <h3>Professional Image</h3>
+        <p>Look credible and stand out from competitors instantly.</p>
+      </div>
+      <div class="card fade-up">
+        <h3>Continuous Growth</h3>
+        <p>Your website improves over time with updates and optimization.</p>
+      </div>
+      <div class="card fade-up">
+        <h3>Predictable Cost</h3>
+        <p>Simple monthly pricing — no surprises.</p>
+      </div>
+      <div class="card fade-up">
+        <h3>All-in-One</h3>
+        <p>Design, hosting, updates, SEO — everything included.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="pricing">
+    <h2>Simple Pricing</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Basic</h3>
+        <p>$49/mo</p>
+        <p>Starter site + support</p>
+      </div>
+      <div class="card" style="border:2px solid var(--primary)">
+        <h3>Pro</h3>
+        <p>$99/mo</p>
+        <p>Full service + SEO</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>See The Difference</h2>
+    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d"
+      style="width:100%;border-radius:14px;margin-top:20px">
+  </section>
+
+  <section class="alt">
+    <h2>Testimonials</h2>
+    <div class="grid grid-3">
+      <div class="card fade-up">"Got clients fast"</div>
+      <div class="card fade-up">"Very easy"</div>
+      <div class="card fade-up">"Best decision"</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Grow?</h2>
+    <p>Let us build your website.</p>
+    <br>
+    <a href="#contact" class="btn">Start Now</a>
+  </section>
+
+  <section id="contact" class="alt">
+    <h2>Contact</h2>
+    <form>
+      <input placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Your business"></textarea>
+      <button class="btn">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          entry.target.classList.add('fade-show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.slide-left,.slide-right,.fade-up').forEach(el => observer.observe(el));
+
+  </script>
+
+</body>
+
+</html>
