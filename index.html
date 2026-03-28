@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelForge | Nowoczesne Strony Internetowe i Rozwiązania IT</title>
+  <title>PixelForge | Profesjonalne Strony Internetowe i Rozwiązania IT dla Biznesu</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
@@ -13,7 +13,7 @@
     }
 
     .hero-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
     }
 
     .card-hover {
@@ -21,8 +21,26 @@
     }
 
     .card-hover:hover {
-      transform: translateY(-12px);
+      transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .timeline-step {
+      position: relative;
+    }
+
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 40px;
+      bottom: -20px;
+      width: 2px;
+      background: #e5e7eb;
+    }
+
+    .timeline-step:last-child::before {
+      display: none;
     }
   </style>
 </head>
@@ -33,276 +51,402 @@
   <header class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div
-          class="w-9 h-9 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
-          P</div>
+        <div class="w-9 h-9 bg-zinc-900 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">P
+        </div>
         <span class="font-semibold text-2xl tracking-tight">PixelForge</span>
       </div>
-
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#" class="hover:text-indigo-600 transition-colors">Usługi</a>
-        <a href="#" class="hover:text-indigo-600 transition-colors">Realizacje</a>
-        <a href="#" class="hover:text-indigo-600 transition-colors">O nas</a>
-        <a href="#" class="hover:text-indigo-600 transition-colors">Blog</a>
-        <a href="#" class="hover:text-indigo-600 transition-colors">Kontakt</a>
+        <a href="#uslugi" class="hover:text-zinc-700 transition-colors">Usługi</a>
+        <a href="#proces" class="hover:text-zinc-700 transition-colors">Proces</a>
+        <a href="#realizacje" class="hover:text-zinc-700 transition-colors">Realizacje</a>
+        <a href="#opinie" class="hover:text-zinc-700 transition-colors">Opinie</a>
+        <a href="#kontakt" class="hover:text-zinc-700 transition-colors">Kontakt</a>
       </nav>
-
-      <div class="flex items-center gap-4">
-        <a href="#" class="px-6 py-2.5 text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors">Zaloguj
-          się</a>
-        <a href="#"
-          class="px-6 py-2.5 bg-zinc-900 text-white text-sm font-medium rounded-2xl hover:bg-black transition-all">Rozpocznij
-          projekt</a>
-      </div>
+      <a href="#wycena"
+        class="px-6 py-2.5 bg-zinc-900 text-white text-sm font-medium rounded-2xl hover:bg-black transition-all">Zapytaj
+        o wycenę</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-bg text-white py-24">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- HERO -->
+  <section class="hero-bg text-white py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
       <div class="space-y-8">
         <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
-          Tworzymy cyfrowe doświadczenia,<br>które <span class="text-indigo-400">sprzedają</span>
+          Budujemy profesjonalne rozwiązania internetowe,<br>które realnie wspierają rozwój Twojego biznesu
         </h1>
         <p class="text-xl text-zinc-300 max-w-lg">
-          Profesjonalne strony internetowe, sklepy online i rozwiązania IT, które pomagają firmom rosnąć w
-          internecie.
+          Tworzymy nowoczesne strony, aplikacje webowe i narzędzia biznesowe. Ponad 120 zrealizowanych projektów •
+          Średni wzrost konwersji +185%.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="#"
+          <a href="#wycena"
             class="px-8 py-4 bg-white text-zinc-900 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-lg inline-flex items-center gap-2">
-            <i class="fas fa-rocket"></i>
-            Rozpocznij współpracę
+            Zapytaj o wycenę
           </a>
-          <a href="#"
-            class="px-8 py-4 border border-white/50 hover:border-white/80 font-medium rounded-2xl transition-all text-lg">
-            Zobacz nasze realizacje
+          <a href="#realizacje"
+            class="px-8 py-4 border border-white/60 hover:border-white font-medium rounded-2xl transition-all text-lg">
+            Zobacz realizacje
           </a>
         </div>
-        <div class="flex items-center gap-8 text-sm pt-6">
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check text-emerald-400"></i>
-            <span>Projekt w 14 dni</span>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm pt-4">
+          <div class="flex items-center gap-2"><i class="fas fa-clock text-emerald-400"></i> Terminowa realizacja</div>
+          <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-emerald-400"></i> Bezpieczeństwo i GDPR
           </div>
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check text-emerald-400"></i>
-            <span>Gwarancja satysfakcji</span>
-          </div>
+          <div class="flex items-center gap-2"><i class="fas fa-headset text-emerald-400"></i> Wsparcie techniczne po
+            wdrożeniu</div>
         </div>
       </div>
 
       <div class="relative">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-          alt="Nowoczesna strona internetowa na laptopie" class="rounded-3xl shadow-2xl border border-white/10">
-        <div class="absolute -bottom-6 -left-6 bg-white text-zinc-900 p-6 rounded-3xl shadow-xl max-w-xs">
-          <div class="text-4xl font-bold text-indigo-600">+340%</div>
-          <p class="text-sm mt-1 text-zinc-600">średni wzrost konwersji naszych klientów</p>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=620&fit=crop"
+          alt="Profesjonalna strona internetowa na laptopie w biurze" class="rounded-3xl shadow-2xl">
+        <div class="absolute -bottom-6 -left-6 bg-white text-zinc-900 p-7 rounded-3xl shadow-xl max-w-[260px]">
+          <div class="text-5xl font-bold text-emerald-600">+185%</div>
+          <p class="text-sm mt-1 text-zinc-600 leading-tight">średni wzrost konwersji u naszych klientów w ciągu
+            pierwszych 6 miesięcy</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Usługi -->
-  <section class="py-20 bg-white">
+  <!-- TRUST BAR -->
+  <section class="py-10 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-semibold text-zinc-900">120+</div>
+          <div class="text-sm text-zinc-500">zrealizowanych projektów</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold text-zinc-900">45</div>
+          <div class="text-sm text-zinc-500">firm w stałej opiece technicznej</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold text-zinc-900">98%</div>
+          <div class="text-sm text-zinc-500">klientów przedłuża współpracę</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold text-zinc-900">4.9/5</div>
+          <div class="text-sm text-zinc-500">średnia ocena klientów</div>
+        </div>
+      </div>
+
+      <!-- Loga klientów (grayscale) -->
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 mt-12 opacity-60">
+        <div class="text-xl font-medium text-zinc-400">Nova Marketing</div>
+        <div class="text-xl font-medium text-zinc-400">Lumina Fashion</div>
+        <div class="text-xl font-medium text-zinc-400">TaskFlow</div>
+        <div class="text-xl font-medium text-zinc-400">SecureBank</div>
+        <div class="text-xl font-medium text-zinc-400">MedicaPro</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USŁUGI -->
+  <section id="uslugi" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <span class="text-indigo-600 font-semibold tracking-widest uppercase text-sm">Co oferujemy</span>
-        <h2 class="text-4xl font-bold mt-3">Kompleksowe rozwiązania dla Twojego biznesu</h2>
+        <span class="uppercase tracking-widest text-sm font-semibold text-zinc-500">Nasza oferta</span>
+        <h2 class="text-4xl font-bold mt-3">Kompleksowe wsparcie cyfrowe dla Twojej firmy</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Usługa 1 -->
-        <div class="card-hover bg-zinc-50 border border-zinc-100 rounded-3xl p-8 group">
-          <div
-            class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl p-10">
+          <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
             <i class="fas fa-globe"></i>
           </div>
-          <h3 class="text-2xl font-semibold mb-3">Tworzenie stron internetowych</h3>
-          <p class="text-zinc-600">Landing page, strony firmowe, sklepy online i zaawansowane aplikacje
-            webowe. Zawsze szybkie, responsywne i zoptymalizowane pod SEO.</p>
-          <ul class="mt-6 space-y-2 text-sm text-zinc-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Nowoczesny
-              design</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Pełna
-              responsywność</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Optymalizacja
-              prędkości</li>
+          <h3 class="text-2xl font-semibold mb-4">Tworzenie stron i aplikacji</h3>
+          <p class="text-zinc-600">Nowoczesne landing page, strony korporacyjne, sklepy internetowe oraz zaawansowane
+            aplikacje webowe.</p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Responsywny design +
+              SEO</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Wysoka wydajność</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Optymalizacja
+              konwersji</li>
           </ul>
+          <a href="#" class="mt-10 inline-block text-blue-600 font-medium hover:underline">Dowiedz się więcej →</a>
         </div>
 
-        <!-- Usługa 2 -->
-        <div class="card-hover bg-zinc-50 border border-zinc-100 rounded-3xl p-8 group">
-          <div
-            class="w-14 h-14 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl p-10">
+          <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
             <i class="fas fa-tools"></i>
           </div>
-          <h3 class="text-2xl font-semibold mb-3">Opieka i rozwój stron</h3>
-          <p class="text-zinc-600">Stałe utrzymanie, aktualizacje, poprawa bezpieczeństwa, optymalizacja i
-            dalszy rozwój Twojej istniejącej strony.</p>
-          <ul class="mt-6 space-y-2 text-sm text-zinc-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Monitoring
-              24/7</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Regularne
-              backupy</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Szybkie
-              reakcje na problemy</li>
+          <h3 class="text-2xl font-semibold mb-4">Utrzymanie i rozwój stron</h3>
+          <p class="text-zinc-600">Stałe wsparcie techniczne, aktualizacje, monitoring bezpieczeństwa i dalszy rozwój
+            istniejących rozwiązań.</p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Monitoring 24/7</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Regularne backupy</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Szybka reakcja na
+              incydenty</li>
           </ul>
+          <a href="#" class="mt-10 inline-block text-blue-600 font-medium hover:underline">Dowiedz się więcej →</a>
         </div>
 
-        <!-- Usługa 3 -->
-        <div class="card-hover bg-zinc-50 border border-zinc-100 rounded-3xl p-8 group">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl p-10">
           <div
-            class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+            class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
             <i class="fas fa-chart-line"></i>
           </div>
-          <h3 class="text-2xl font-semibold mb-3">Rozwiązania biznesowe</h3>
-          <p class="text-zinc-600">CRM, automatyzacje marketingowe, dashboardy analityczne, integracje
-            systemów i narzędzia generujące leady.</p>
-          <ul class="mt-6 space-y-2 text-sm text-zinc-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Automatyzacja
-              procesów</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Analiza danych
-            </li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Integracje API
+          <h3 class="text-2xl font-semibold mb-4">Rozwiązania biznesowe</h3>
+          <p class="text-zinc-600">Automatyzacje procesów, systemy CRM, dashboardy analityczne, integracje i narzędzia
+            do generowania leadów.</p>
+          <ul class="mt-8 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Automatyzacja
+              marketingu</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Analiza danych w
+              czasie rzeczywistym</li>
+            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Integracje systemów
             </li>
           </ul>
+          <a href="#" class="mt-10 inline-block text-blue-600 font-medium hover:underline">Dowiedz się więcej →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Dlaczego my? -->
-  <section class="py-20 bg-zinc-100">
+  <!-- PROCES WSPÓŁPRACY -->
+  <section id="proces" class="py-24 bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">Jak pracujemy</h2>
+        <p class="text-zinc-600 mt-3">Sprawdzony, transparentny proces realizacji projektów</p>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-8 relative">
+        <div class="timeline-step md:text-center">
+          <div class="w-12 h-12 mx-auto bg-white shadow rounded-2xl flex items-center justify-center text-2xl">1</div>
+          <h4 class="font-semibold mt-6">Konsultacja</h4>
+          <p class="text-sm text-zinc-600 mt-2">Spotkanie online lub stacjonarne – analiza potrzeb i celów biznesowych
+          </p>
+        </div>
+        <div class="timeline-step md:text-center">
+          <div class="w-12 h-12 mx-auto bg-white shadow rounded-2xl flex items-center justify-center text-2xl">2</div>
+          <h4 class="font-semibold mt-6">Strategia i wireframes</h4>
+          <p class="text-sm text-zinc-600 mt-2">Opracowanie koncepcji, struktury i makiet strony</p>
+        </div>
+        <div class="timeline-step md:text-center">
+          <div class="w-12 h-12 mx-auto bg-white shadow rounded-2xl flex items-center justify-center text-2xl">3</div>
+          <h4 class="font-semibold mt-6">Projektowanie UI/UX</h4>
+          <p class="text-sm text-zinc-600 mt-2">Tworzenie nowoczesnego, użytecznego designu</p>
+        </div>
+        <div class="timeline-step md:text-center">
+          <div class="w-12 h-12 mx-auto bg-white shadow rounded-2xl flex items-center justify-center text-2xl">4</div>
+          <h4 class="font-semibold mt-6">Programowanie i testy</h4>
+          <p class="text-sm text-zinc-600 mt-2">Implementacja + rygorystyczne testy</p>
+        </div>
+        <div class="timeline-step md:text-center">
+          <div class="w-12 h-12 mx-auto bg-white shadow rounded-2xl flex items-center justify-center text-2xl">5</div>
+          <h4 class="font-semibold mt-6">Uruchomienie i wsparcie</h4>
+          <p class="text-sm text-zinc-600 mt-2">Wdrożenie, szkolenie i długoterminowa opieka</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="realizacje" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-12">
         <div>
-          <h2 class="text-4xl font-bold leading-tight">Dlaczego firmy wybierają PixelForge?</h2>
-          <div class="mt-10 space-y-8">
-            <div class="flex gap-6">
-              <div class="text-4xl">🚀</div>
-              <div>
-                <h4 class="font-semibold text-xl">Szybkość i efektywność</h4>
-                <p class="text-zinc-600 mt-2">Od pierwszego spotkania do uruchomienia strony zazwyczaj
-                  potrzebujemy tylko 2–4 tygodni.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="text-4xl">🎯</div>
-              <div>
-                <h4 class="font-semibold text-xl">Skupiamy się na wynikach</h4>
-                <p class="text-zinc-600 mt-2">Projektujemy nie tylko ładnie, ale przede wszystkim tak,
-                  aby strona realnie generowała sprzedaż i leady.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="text-4xl">🔒</div>
-              <div>
-                <h4 class="font-semibold text-xl">Długoterminowe partnerstwo</h4>
-                <p class="text-zinc-600 mt-2">Po uruchomieniu nie zostawiamy Cię samego – zapewniamy
-                  opiekę techniczną i wsparcie rozwoju.</p>
-              </div>
-            </div>
-          </div>
+          <h2 class="text-4xl font-bold">Nasze realizacje</h2>
+          <p class="text-zinc-600">Projekty, które przynoszą realne wyniki biznesowe</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
-          alt="Zespół programistów przy pracy" class="rounded-3xl shadow-xl">
-      </div>
-    </div>
-  </section>
-
-  <!-- Realizacje (Portfolio) -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold">Nasze ostatnie realizacje</h2>
-        <p class="text-zinc-600 mt-3">Projekty, z których jesteśmy szczególnie dumni</p>
+        <a href="#" class="text-blue-600 font-medium hover:underline hidden md:block">Wszystkie realizacje →</a>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="group overflow-hidden rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-            alt="Projekt strony dla agencji marketingowej"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="p-6">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Nova Marketing"
+            class="w-full h-56 object-cover">
+          <div class="p-8">
             <h4 class="font-semibold">Nova Marketing</h4>
-            <p class="text-sm text-zinc-500">Landing page + system lead generation</p>
+            <p class="text-sm text-zinc-500">Landing page + system pozyskiwania leadów</p>
+            <p class="text-emerald-600 text-sm mt-4">+320% leadów w 4 miesiące</p>
           </div>
         </div>
-        <div class="group overflow-hidden rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1558655146-9f40138ed1cb?w=800" alt="Sklep internetowy z odzieżą"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="p-6">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1558655146-9f40138ed1cb?w=800" alt="Lumina Fashion"
+            class="w-full h-56 object-cover">
+          <div class="p-8">
             <h4 class="font-semibold">Lumina Fashion</h4>
-            <p class="text-sm text-zinc-500">Zaawansowany sklep WooCommerce</p>
+            <p class="text-sm text-zinc-500">Zaawansowany sklep internetowy</p>
+            <p class="text-emerald-600 text-sm mt-4">+67% wzrostu sprzedaży online</p>
           </div>
         </div>
-        <div class="group overflow-hidden rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Aplikacja webowa SaaS"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="p-6">
+        <div class="card-hover bg-white border border-zinc-100 rounded-3xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="TaskFlow"
+            class="w-full h-56 object-cover">
+          <div class="p-8">
             <h4 class="font-semibold">TaskFlow</h4>
             <p class="text-sm text-zinc-500">Aplikacja SaaS do zarządzania projektami</p>
+            <p class="text-emerald-600 text-sm mt-4">Redukcja czasu raportowania o 75%</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-4xl font-bold">Gotowy na nową, skuteczną stronę?</h2>
-      <p class="text-xl mt-4 text-indigo-100">Umów się na darmową konsultację i zobacz, jak możemy pomóc Twojemu
-        biznesowi rosnąć.</p>
-      <a href="#"
-        class="mt-10 inline-block px-10 py-5 bg-white text-indigo-700 font-semibold text-lg rounded-2xl hover:bg-zinc-100 transition-all">
-        Umów darmową konsultację →
-      </a>
+  <!-- OPINIE -->
+  <section id="opinie" class="py-24 bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Co mówią nasi klienci</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl">
+          <p class="italic text-zinc-700">"PixelForge stworzył nam stronę, która nie tylko wygląda nowocześnie, ale
+            przede wszystkim sprzedaje. Wzrost zapytań o 280% w pierwszym kwartale."</p>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-300 rounded-full"></div>
+            <div>
+              <div class="font-medium">Anna Kowalska</div>
+              <div class="text-sm text-zinc-500">Dyrektor Marketingu, Nova Marketing</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl">
+          <p class="italic text-zinc-700">"Profesjonalna opieka techniczna i szybkie wdrożenie zmian. Dzięki nim możemy
+            skupić się na rozwoju biznesu, a nie na problemach technicznych."</p>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-300 rounded-full"></div>
+            <div>
+              <div class="font-medium">Marcin Nowak</div>
+              <div class="text-sm text-zinc-500">CEO, Lumina Fashion</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl">
+          <p class="italic text-zinc-700">"Dashboard analityczny i automatyzacje znacząco poprawiły efektywność naszego
+            zespołu sprzedaży."</p>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-300 rounded-full"></div>
+            <div>
+              <div class="font-medium">Katarzyna Wiśniewska</div>
+              <div class="text-sm text-zinc-500">Head of Sales, TaskFlow</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Stopka -->
-  <footer class="bg-zinc-900 text-zinc-400 py-16">
+  <!-- TECHNOLOGIE -->
+  <section class="py-16 bg-white border-t border-b">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-zinc-500 text-sm mb-8">Technologie, z których korzystamy</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-75">
+        <div class="text-2xl font-medium text-zinc-400">Next.js</div>
+        <div class="text-2xl font-medium text-zinc-400">Tailwind</div>
+        <div class="text-2xl font-medium text-zinc-400">WordPress</div>
+        <div class="text-2xl font-medium text-zinc-400">Shopify</div>
+        <div class="text-2xl font-medium text-zinc-400">React</div>
+        <div class="text-2xl font-medium text-zinc-400">HubSpot</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Najczęściej zadawane pytania</h2>
+      <div class="space-y-6">
+        <details class="bg-zinc-50 p-6 rounded-2xl">
+          <summary class="font-medium cursor-pointer">Ile czasu trwa realizacja projektu?</summary>
+          <p class="mt-4 text-zinc-600">Standardowy projekt strony firmowej realizujemy w 3–6 tygodni. Sklepy i bardziej
+            złożone aplikacje – 8–12 tygodni.</p>
+        </details>
+        <details class="bg-zinc-50 p-6 rounded-2xl">
+          <summary class="font-medium cursor-pointer">Czy zapewniacie opiekę techniczną po uruchomieniu?</summary>
+          <p class="mt-4 text-zinc-600">Tak. Oferujemy pakiety stałej opieki, w tym monitoring, aktualizacje i szybką
+            pomoc techniczną.</p>
+        </details>
+        <details class="bg-zinc-50 p-6 rounded-2xl">
+          <summary class="font-medium cursor-pointer">Jak wygląda proces rozliczeń?</summary>
+          <p class="mt-4 text-zinc-600">Zazwyczaj 30–40% zaliczki, reszta po akceptacji poszczególnych etapów lub po
+            uruchomieniu.</p>
+        </details>
+        <details class="bg-zinc-50 p-6 rounded-2xl">
+          <summary class="font-medium cursor-pointer">Czy strony są zoptymalizowane pod SEO i mobile?</summary>
+          <p class="mt-4 text-zinc-600">Tak – wszystkie projekty są w pełni responsywne i zoptymalizowane pod kątem
+            wyszukiwarek.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUŻE CTA Z FORMULARZEM -->
+  <section id="wycena" class="py-24 bg-zinc-900 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold">Rozpocznijmy współpracę</h2>
+      <p class="mt-4 text-zinc-400">Wypełnij krótki formularz, a skontaktujemy się z Tobą w ciągu 24 godzin i
+        przygotujemy indywidualną propozycję.</p>
+
+      <form class="mt-12 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <input type="text" placeholder="Imię i nazwisko"
+          class="bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500">
+        <input type="email" placeholder="Email służbowy"
+          class="bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500">
+        <input type="tel" placeholder="Telefon"
+          class="bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500">
+        <input type="text" placeholder="Nazwa firmy"
+          class="bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500">
+        <textarea placeholder="Opisz krótko swój projekt lub potrzeby..." rows="4"
+          class="md:col-span-2 bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500"></textarea>
+      </form>
+
+      <button class="mt-8 px-12 py-5 bg-blue-600 hover:bg-blue-700 transition-colors font-semibold rounded-2xl text-lg">
+        Wyślij zapytanie o wycenę
+      </button>
+    </div>
+  </section>
+
+  <!-- STOPKA -->
+  <footer class="bg-zinc-950 text-zinc-400 py-20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-5 gap-10">
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 text-white mb-6">
-            <div
-              class="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-2xl flex items-center justify-center font-bold text-2xl">
+            <div class="w-9 h-9 bg-white text-zinc-900 rounded-2xl flex items-center justify-center font-bold text-2xl">
               P</div>
             <span class="font-semibold text-2xl">PixelForge</span>
           </div>
-          <p class="max-w-sm">Tworzymy nowoczesne rozwiązania internetowe, które realnie wspierają rozwój
-            Twojego biznesu.</p>
+          <p class="max-w-sm">Profesjonalne rozwiązania internetowe dla firm, które chcą rosnąć w cyfrowym świecie.</p>
         </div>
         <div>
           <h4 class="text-white font-medium mb-4">Usługi</h4>
-          <ul class="space-y-2">
-            <li>Strony internetowe</li>
-            <li>Sklepy online</li>
-            <li>Aplikacje webowe</li>
-            <li>Opieka techniczna</li>
+          <ul class="space-y-2 text-sm">
+            <li>Tworzenie stron i aplikacji</li>
+            <li>Utrzymanie i rozwój</li>
+            <li>Rozwiązania biznesowe</li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-medium mb-4">Firma</h4>
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm">
             <li>O nas</li>
             <li>Realizacje</li>
+            <li>Proces współpracy</li>
             <li>Blog</li>
-            <li>Kontakt</li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-medium mb-4">Kontakt</h4>
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm">
             <li>hello@pixelforge.pl</li>
-            <li>+48 123 456 789</li>
+            <li>+48 789 123 456</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-zinc-800 mt-16 pt-8 text-sm text-center">
-        © 2026 PixelForge – Wszystkie prawa zastrzeżone
+      <div
+        class="border-t border-zinc-800 mt-16 pt-8 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 PixelForge Sp. z o.o. Wszystkie prawa zastrzeżone.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Polityka prywatności</a>
+          <a href="#" class="hover:text-white">RODO</a>
+        </div>
       </div>
     </div>
   </footer>
